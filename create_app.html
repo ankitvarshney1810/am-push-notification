@@ -1,0 +1,441 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#21395f">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=PT Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/am.css">
+        <script src="https://kit.fontawesome.com/4e1eba2436.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+        <link rel="icon" href="assets/images/icon.png" type="image">
+        <title>User Add New Project | Automagic IT Solutions Pvt Ltd</title>
+    </head>
+<body style="font-family:verdana!important;">
+
+	
+
+
+
+
+<section class="sidebar" id="sidebar">
+	<div class="head">
+        <div class="logo">
+        	<a href="/home">
+            	<img src="/assets/images/Logo-semilight.png" alt="Automagic IT Solutions">
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <a href="/user" >
+            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+            <span class="name">DASHBOARD</span>
+        </a>
+        <h6>MAIN MENU</h6>
+        <div class="drop mt-2">
+	        <a href="/user/project" >
+	            <span class="icon"><i class="fas fa-mail-bulk"></i></span>
+	            <span class="name">All App</span>
+	        </a>
+	        <span class="add-cat" id="campaign-nav"><i class="fas fa-chevron-circle-down"></i></span>
+	        <div class="dropdown campaign-nav" style="display: none;">
+				<a href="/user/project/add" class='active'>
+					<span class="icon"><i class="fas fa-paper-plane"></i></span>
+					<span class="name">Create App</span>
+				</a>
+	         </div>
+	    </div>
+        <div class="drop">
+	        <a href="/user/notification" >
+	            <span class="icon"><i class="fas fa-address-book"></i></span>
+	            <span class="name">Notifications</span>
+	        </a>
+	        <span class="add-cat" id="category"><i class="fas fa-chevron-circle-down"></i></span>
+            <div class="dropdown category" style="display: none;">
+                <a href="/user/notification/configure" >
+                    <span class="icon"><i class="fas fa-layer-group"></i></span>
+                    <span class="name">Configure New</span>
+                </a>
+            </div>
+        </div>
+        <div class="drop">
+			<a href="/user/settings" >
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <span class="name">My Account</span>
+            </a>
+            <span class="add-cat" id="account"><i class="fas fa-chevron-circle-down"></i></span>
+            <div class="dropdown account" style="display: none;">
+                <a href="/user/subscription-plan" >
+                    <span class="icon"><i class="fas fa-credit-card"></i></span>
+                    <span class="name">Current Plan</span>
+                </a>
+                <a href="/user/purchase-history" >
+                    <span class="icon"><i class="fas fa-history"></i></span>
+                    <span class="name">Purchase History</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){ 
+    
+    	$('#campaign-nav').trigger('click');
+    
+    });
+    </script>
+</section>
+
+
+
+<header>
+	<div class="head">
+		<div class="btnmenu">
+			<div class="bars top"></div>
+			<div class="bars center"></div>
+			<div class="bars bottom"></div>
+		</div>
+        <div class="notify">
+            <span class="icon" id="bell">
+                <i class="fas fa-bell"></i>
+                <!-- span class="count">45</span -->
+            </span>
+        </div>
+        <div class="sub-admin">
+            <div class="pic">
+                <img src="https://files.automagicitsolutions.com/profile/3a6ff581-65a4-441d-a8ac-05def68f908b.png" alt="Ramesh Jangra">
+            </div>
+            <div class="title">
+                <strong>Ramesh</strong>
+                <small>Admin</small>
+            </div>
+            <i class="fas fa-caret-down"></i>
+            <div class="dropdown">
+                <a href="/user/settings" class="item">Profile</a>
+                <a href="/logout" class="item">Logout</a>
+                
+                <a href="/cms" class="item">CMS</a>
+                
+            </div>
+        </div>
+	</div>
+</header>
+<div class="notification-box" id="box">
+    <div class="head">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <div class="title">Latest</div>
+            </div>
+            <div class="col-auto">
+                <span class="action" id="close">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="model notification-popup">
+    <div class="new text-center">
+        <div class="row">
+            <div class="col mb-2">
+                <h4 id="notification-title">Title</h4>
+            </div>
+        </div>
+        <form action="javascript:void(0)">
+            <div class="row">
+                <div class="col-12" id="notification-message">
+                    Message
+                </div>
+            </div>
+        </form>
+        <div class="close">
+            <img src="/resources/assets/images/close.svg">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<section class="content" id="content">
+	<div class="campaign">
+		<div class="container">
+			<div class="row g-0">
+				<div class="col-12">
+					<div class="heading">Configure App </div>
+				</div>
+			</div>
+			<hr class="mb-4">
+			<input type="hidden" class="form-control" id="projectId" value="0">
+			<div class="row mb-4" id="set-up">
+				<div class="col">
+					<form action="javascript:void(0)" class="mx-0 mx-md-2 mx-lg-4" id="projectSetUp">
+						<div class="row mx-0 mx-md-4">
+							<div class="col-sm-6">
+                            	<div class="am-inputBox mb-4">
+                                	<label for="title" class="form-label inputText">Project Title</label>
+                                	<input type="text" class="form-control am-input" id="title" value="">
+                            	</div>  
+                            </div>
+							<div class="col-sm-6">
+                                <div class="input-group mb-4">
+                                    <span class="input-group-text" id="basic-addon3">https://</span>
+								    <div class="am-inputBox d-flex" style="flex: 1;">
+                                    	<label for="website" class="form-label inputText">Website domain</label>
+                                        <input type="text" class="form-control am-input" id="website" value="">
+								    </div>  
+                                </div>
+							</div>
+                        </div>
+                        <div class="box py-5 mb-4">
+                            <div class="row mx-0 mx-md-4">
+                                <div class="col-sm-6">
+                                    <div class="am-inputBox mb-4">
+                                        <label for="publicKey" class="form-label inputText">FCM Public Key </label>
+                                        <input type="text" class="form-control am-input" id="publicKey" value="" >
+                                    </div>  
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="am-inputBox mb-4">
+                                        <label for="privateKey" class="form-label inputText">FCM Private Key</label>
+                                        <input type="text" class="form-control am-input" id="privateKey" value="" >
+                                    </div>  
+                                </div>
+                                <div class="col text-center">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" target="_blank" class="external-link">Read More</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="secondary-heading">Modal Elements</div>
+                                <div class="row mx-0 mx-md-2 mx-lg-4">
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-4">
+                                            <div class="am-inputBox inputFocus">
+                                                <label for="Logoupload" class="form-label inputText selectText">Choose Logo</label>
+                                                <select class="form-select am-input am-input-select" id="Logoupload" aria-label="Example select with button addon">
+                                                  <option value="1" selected>Upload URL</option>
+                                                  <option value="2">Upload Local</option>
+                                                </select>
+                                            </div>
+                                            <div class="am-inputBox" style="flex: 1;" id="logo_url">
+                                                <label for="Logoupload" class="form-label inputText">Paste URL here</label>
+                                                <input type="text" class="form-control am-input" placeholder="">
+                                            </div>
+                                            <input type="file" class="form-control" style="display: none;" id="logo_path">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="am-inputBox mb-4">
+                                            <label for="PopUpHeader" class="form-label inputText">PopUp Header</label>
+                                            <input type="text" class="form-control am-input" id="PopUpHeader" value="">
+                                        </div>  
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="am-inputBox mb-4">
+                                            <label for="PopUpBody" class="form-label inputText">PopUp Body</label>
+                                            <textarea class="form-control am-input am-textarea" id="PopUpBody" rows="3"></textarea>
+                                        </div>  
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="d-flex mb-4">
+                                            <label for="exampleColorInput" class="form-label m-auto mx-0 me-2">Button Color Code</label>
+                                            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#713fc9" title="Choose your color">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 border-start">
+                                <div class="secondary-heading">Preview</div>
+                                <div class="toast-card">
+                                    <div class="close">x</div>
+                                    <div class="heading">Header</div>
+                                    <div class="detail">
+                                        <img src="https://www.latestjob.org.in/wp-content/uploads/2022/10/cropped-search-icon-180x180.png" alt="">
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium illo illum corrupti quis officiis nobis quidem perferendis quaerat perspiciatis fuga excepturi mollitia autem</p>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <div class="buttons">
+                                            <button class="btn btn-am-primary">Allow</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="secondary-heading">Additional Details</div>
+                        <div class="row mx-4">
+                            <div class="col-sm-4">
+                                <div class="am-inputBox mb-4">
+                                    <label for="modalId" class="form-label inputText selectText">Choose Placement</label>
+                                    <select class="form-select am-input am-input-select" id="modalId">
+                                        <option value=""></option>
+
+                                        <option value="1" >Top Center Placement</option>
+                                        
+                                        <option value="2" >Top Left Placement</option>
+                                        
+                                        <option value="3" >Top Right Placement</option>
+                                        
+                                        <option value="4" >Middle Center Placement</option>
+                                        
+                                        <option value="5" >Middle Left Placement</option>
+                                        
+                                        <option value="6" >Middle Right Placement</option>
+                                        
+                                        <option value="7" >Bottom Center Placement</option>
+                                        
+                                        <option value="8" >Bottom Left Placement</option>
+                                        
+                                        <option value="9" >Bottom Right Placement</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="am-inputBox mb-4">
+                                    <label for="refresh_freq" class="form-label inputText selectText">Refresh Frequency</label>
+                                    <select class="form-select am-input am-input-select" id="refresh_freq">
+                                        <option value=""></option>
+
+                                        <option value="1" >1</option>
+                                        
+                                        <option value="2" >2</option>
+                                        
+                                        <option value="3" >3</option>
+                                        
+                                        <option value="4" >4</option>
+                                        
+                                        <option value="5" >5</option>
+                                        
+                                        <option value="6" >6</option>
+                                        
+                                        <option value="7" >7</option>
+                                        
+                                        <option value="8" >8</option>
+                                        
+                                        <option value="9" >9</option>
+                                        
+                                        <option value="random" >Random</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="am-inputBox mb-4">
+                                    <label for="launch_time" class="form-label inputText">Launch Time Interval</label>
+                                    <input type="text" class="form-control am-input" id="launch_time" value="">
+                                </div>  
+                            </div>
+                        </div>
+                         <div class="row mx-4">
+                             <div class="col-12 text-end mt-sm-2">
+                                 <div class="row g-0 justify-content-md-end">    
+                                     <div class="col-12 col-sm-auto">
+                                     	<button type="button" class="btn btn-apply"  id="projectSetUpSubmit"><span class="d-inline-block me-1">Configure</span><i class="fas fa-angle-right"></i></button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+    
+    
+
+<footer>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-7 text-center text-md-start align-self-center">
+                <span class="copyright">&#169; 2022 Automagic IT Solutions. All Rights Reserved</span>
+            </div>
+            <div class="col-md-5 d-grid d-md-block align-self-center">
+                <div class="footer-social-list">
+                    <ul class="list-inline top-margin-20">
+                        <li>
+                            <a href="https://www.facebook.com/automaticitsolutions" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/automagicitsolutions/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/it_automagic" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/automagic-it-solutions/" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UC_jMsSHTrFCPMGfD-NpcroA" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.pinterest.com/automagicitsolutions/" target="_blank">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script type="text/javascript">
+        $(".am-input").focus(function(){
+            $(this).parent().addClass("inputFocus");
+                 }).blur(function(){
+                     if($(this).val() ===''){
+                     $(this).parent().removeClass("inputFocus");
+                 }
+         });
+    </script>
+
+    <script>
+        document.getElementById('Logoupload').addEventListener('change', function() {
+            console.log('You selected: ', this.value);
+            if(this.value == 1){
+                document.getElementById('logo_url').style.display = "flex";
+                document.getElementById('logo_path').style.display = "none";
+            }
+            else{
+                document.getElementById('logo_url').style.display = "none";
+                document.getElementById('logo_path').style.display = "block";
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+    $( function() {
+    	$("#datepicker").datepicker({
+    		dateFormat: "dd/mm/yy",
+    		duration: "fast"
+    	});
+    });
+    </script>
+</body>
+</html>

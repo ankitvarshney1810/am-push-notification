@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#21395f">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=PT Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://kit.fontawesome.com/4e1eba2436.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+    <link rel="icon" href="assets/images/icon.png" type="image">
+</head>
+<body>
+    <section class="sidebar" id="sidebar">
+        <div class="head">
+            <div class="logo">
+                <img src="assets/images/Logo.png" alt="">
+            </div>
+        </div>
+        <div class="body">
+            <a href="dashboard.html">
+                <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                <span class="name">DASHBOARD</span>
+            </a>
+            <h6>MAIN MENU</h6>
+            <div class="drop active">
+                <a href="#">
+                    <span class="icon"><i class="fas fa-book-open"></i></span>
+                    <span class="name">Campaign</span>
+                </a>
+                <span class="add-cat" id="campaign"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown campaign" style="display: none;">
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-plus"></i></span>
+                        <span class="name">Create Campaign</span>
+                    </a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="contact.html">
+                    <span class="icon"><i class="fas fa-users"></i></span>
+                    <span class="name">Contacts</span>
+                </a>
+                <span class="add-cat" id="category"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown category" style="display: none;">
+                    <a href="contact.html">
+                        <span class="icon"><i class="fas fa-layer-group"></i></span>
+                        <span class="name">Categories</span>
+                    </a>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $(".add-cat").click(function(){
+                        var id = $(this).attr("id");
+                        $("."+id).toggle();
+                    });
+                });
+            </script>
+            <a href="#">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <span class="name">Sender</span>
+            </a>
+            <div class="drop active">
+                <a href="#">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="name">My Account</span>
+                </a>
+                <span class="add-cat" id="account"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown account" style="display: none;">
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-file-alt"></i></span>
+                        <span class="name">Plans</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-credit-card"></i></span>
+                        <span class="name">Billing Option</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-history"></i></span>
+                        <span class="name">Purchase History</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#">
+                <span class="icon"><i class="fas fa-sliders-h"></i></span>
+                <span class="name">Settings</span>
+            </a>
+        </div>
+    </section>
+    <header>
+        <div class="head">
+            <div class="btnmenu">
+                <div class="bars top"></div>
+                <div class="bars center"></div>
+                <div class="bars bottom"></div>
+            </div>
+            <div class="notify">
+                <span class="icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="count">45</span>
+                </span>
+                <span class="icon">
+                    <i class="fas fa-comments"></i>
+                    <span class="count">17</span>
+                </span>
+            </div>
+            <div class="sub-admin">
+                <div class="pic">
+                    <img src="assets/images/pic.jpg" alt="Faculty">
+                </div>
+                <div class="title">
+                    <strong>Ankit Varshney</strong>
+                    <small>User</small>
+                </div>
+                <i class="fas fa-caret-down"></i>
+                <div class="dropdown">
+                    <a href="#" class="item">Profile</a>
+                    <a href="" class="item">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="content" id="content">
+        <div class="dashboard">
+            <div class="container">                
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="heading">Purchase History</div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Total Amount</th>
+                                                    <th scope="col">Invoice</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">28 Sep 2022</th>
+                                                    <td>Description about the subscription goes here</td>
+                                                    <td><i class="fas fa-rupee-sign"></i> <strong>1000</strong></td>
+                                                    <td><a href="" class="link-primary">sdfbn134</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">28 Aug 2022</th>
+                                                    <td>Description about the subscription goes here</td>
+                                                    <td><i class="fas fa-rupee-sign"></i> <strong>1000</strong></td>
+                                                    <td><a href="" class="link-primary">sdfbn134</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">28 Jul 2022</th>
+                                                    <td>Description about the subscription goes here</td>
+                                                    <td><i class="fas fa-rupee-sign"></i> <strong>1000</strong></td>
+                                                    <td><a href="" class="link-primary">sdfbn134</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">28 Jun 2022</th>
+                                                    <td>Description about the subscription goes here</td>
+                                                    <td><i class="fas fa-rupee-sign"></i> <strong>1000</strong></td>
+                                                    <td><a href="" class="link-primary">sdfbn134</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-md-7 text-center text-md-start align-self-center">
+                    <span class="copyright">© 2022 Automagic. All Rights Reserved</span>
+                </div>
+                <div class="col-md-5 d-grid d-md-block align-self-center">
+                    <div class="footer-social-list">
+                        <ul class="list-inline top-margin-20">
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="blank">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
