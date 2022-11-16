@@ -83,8 +83,6 @@
             </script>
         </section>
     
-    
-    
         <header>
         	<div class="head">
         		<div class="btnmenu">
@@ -158,58 +156,52 @@
         		<div class="container">
         			<div class="row g-0">
         				<div class="col-12">
-        					<div class="heading">Configure App </div>
+        					<div class="heading">Configure Notification</div>
         				</div>
         			</div>
         			<hr class="mb-4">
         			<input type="hidden" class="form-control" id="projectId" value="0">
-        			<div class="row mb-4" id="set-up">
+        			<div class="row my-4" id="set-up">
         				<div class="col">
         					<form action="javascript:void(0)" class="mx-0 mx-md-2 mx-lg-4" id="projectSetUp">
         						<div class="row mx-0 mx-md-4">
         							<div class="col-sm-6">
-                                    	<div class="am-inputBox mb-4">
+                                    	<div class="am-inputBox inputFocus mb-4">
+                                        	<input type="text" class="form-control am-input" id="title" value="First Notification" disabled>
                                         	<label for="title" class="form-label inputText">Project Title</label>
-                                        	<input type="text" class="form-control am-input" id="title" value="">
                                     	</div>  
                                     </div>
         							<div class="col-sm-6">
                                         <div class="input-group mb-4">
                                             <span class="input-group-text" id="basic-addon3">https://</span>
-        								    <div class="am-inputBox d-flex" style="flex: 1;">
+        								    <div class="am-inputBox inputFocus d-flex" style="flex: 1;">
+                                                <input type="text" class="form-control am-input" id="website" value="www.latestjob.org.in" disabled>
                                             	<label for="website" class="form-label inputText">Website domain</label>
-                                                <input type="text" class="form-control am-input" id="website" value="">
         								    </div>  
                                         </div>
         							</div>
                                 </div>
-                                <div class="box py-5 mb-4">
-                                    <div class="row mx-0 mx-md-4">
-                                        <div class="col-sm-6">
-                                            <div class="am-inputBox mb-4">
-                                                <label for="publicKey" class="form-label inputText">FCM Public Key </label>
-                                                <input type="text" class="form-control am-input" id="publicKey" value="" >
-                                            </div>  
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="am-inputBox mb-4">
-                                                <label for="privateKey" class="form-label inputText">FCM Private Key</label>
-                                                <input type="text" class="form-control am-input" id="privateKey" value="" >
-                                            </div>  
-                                        </div>
-                                        <div class="col text-center">
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" target="_blank" class="external-link">Read More</a></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <hr class="mb-4">
                                 <div class="row mb-4">
                                     <div class="col-md-6">
-                                        <div class="secondary-heading">Modal Elements</div>
+                                        <div class="secondary-heading">Notification Elements</div>
                                         <div class="row mx-0 mx-md-2 mx-lg-4">
+                                            <div class="col-sm-12">
+                                                <div class="am-inputBox mb-4">
+                                                    <label for="PopUpHeader" class="form-label inputText">Notification Title</label>
+                                                    <input type="text" class="form-control am-input" id="PopUpHeader" value="">
+                                                </div>  
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="am-inputBox mb-4">
+                                                    <label for="PopUpBody" class="form-label inputText">Notification Body</label>
+                                                    <textarea class="form-control am-input am-textarea" id="PopUpBody" rows="3"></textarea>
+                                                </div>  
+                                            </div>
                                             <div class="col-sm-12">
                                                 <div class="input-group mb-4">
                                                     <div class="am-inputBox inputFocus">
-                                                        <label for="Logoupload" class="form-label inputText selectText">Choose Logo</label>
+                                                        <label for="Logoupload" class="form-label inputText selectText">Company Logo(opt.)</label>
                                                         <select class="form-select am-input am-input-select" id="Logoupload" aria-label="Example select with button addon">
                                                           <option value="1" selected>Upload URL</option>
                                                           <option value="2">Upload Local</option>
@@ -223,104 +215,90 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
-                                                <div class="am-inputBox mb-4">
-                                                    <label for="PopUpHeader" class="form-label inputText">PopUp Header</label>
-                                                    <input type="text" class="form-control am-input" id="PopUpHeader" value="">
-                                                </div>  
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="am-inputBox mb-4">
-                                                    <label for="PopUpBody" class="form-label inputText">PopUp Body</label>
-                                                    <textarea class="form-control am-input am-textarea" id="PopUpBody" rows="3"></textarea>
-                                                </div>  
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="d-flex mb-4">
-                                                    <label for="exampleColorInput" class="form-label m-auto mx-0 me-2">Button Color Code</label>
-                                                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#713fc9" title="Choose your color">
+                                                <div class="input-group mb-4">
+                                                    <div class="am-inputBox inputFocus">
+                                                        <label for="Logoupload" class="form-label inputText selectText">Banner (opt.)</label>
+                                                        <select class="form-select am-input am-input-select" id="Logoupload" aria-label="Example select with button addon">
+                                                          <option value="1" selected>Upload URL</option>
+                                                          <option value="2">Upload Local</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="am-inputBox" style="flex: 1;" id="logo_url">
+                                                        <label for="Logoupload" class="form-label inputText">Paste URL here</label>
+                                                        <input type="text" class="form-control am-input" placeholder="">
+                                                    </div>
+                                                    <input type="file" class="form-control" style="display: none;" id="logo_path">
                                                 </div>
                                             </div>
+        							        <div class="col-sm-12">
+                                                <div class="input-group mb-4">
+                                                    <span class="input-group-text" id="basic-addon3">https://</span>
+        							        	    <div class="am-inputBox d-flex" style="flex: 1;">
+                                                    	<label for="clickUrl" class="form-label inputText">Click URL</label>
+                                                        <input type="text" class="form-control am-input" id="clickUrl" value="">
+        							        	    </div>  
+                                                </div>
+        							        </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 border-start">
                                         <div class="secondary-heading">Preview</div>
-                                        <div class="toast-card">
+                                        <div class="notification-toast">
+                                            <img src="assets/images/job.png" class="banner" alt="">
+                                            <div class="body">
+                                                <div class="top">
+                                                    <img src="assets/images/google.png" alt="">
+                                                    <div class="close"><i class="fas fa-times"></i></div>
+                                                </div>
+                                                <div class="middle my-3">
+                                                    <img src="https://www.latestjob.org.in/wp-content/uploads/2022/10/cropped-search-icon-180x180.png" alt="" class="logo">
+                                                    <div class="detail">
+                                                        <div class="heading">Heading goes here</div>
+                                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                                        <div class="website">www.latestjob.org.in</div>
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-light btn-sm w-100">Read Now</button>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="toast-card">
                                             <div class="close">x</div>
-                                            <div class="heading">Header</div>
                                             <div class="detail">
                                                 <img src="https://www.latestjob.org.in/wp-content/uploads/2022/10/cropped-search-icon-180x180.png" alt="">
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium illo illum corrupti quis officiis nobis quidem perferendis quaerat perspiciatis fuga excepturi mollitia autem</p>
+                                                <div>
+                                                    <div class="heading ms-3">Header</div>
+                                                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium illo illum corrupti quis officiis nobis quidem perferendis quaerat perspiciatis fuga excepturi mollitia autem</p>
+                                                </div>
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <div class="buttons">
                                                     <button class="btn btn-am-primary">Allow</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <hr class="mb-4">
                                 <div class="secondary-heading">Additional Details</div>
                                 <div class="row mx-4">
-                                    <div class="col-sm-4">
-                                        <div class="am-inputBox mb-4">
-                                            <label for="modalId" class="form-label inputText selectText">Choose Placement</label>
-                                            <select class="form-select am-input am-input-select" id="modalId">
-                                                <option value=""></option>
-                                            
-                                                <option value="1" >Top Center Placement</option>
-                                            
-                                                <option value="2" >Top Left Placement</option>
-                                            
-                                                <option value="3" >Top Right Placement</option>
-                                            
-                                                <option value="4" >Middle Center Placement</option>
-                                            
-                                                <option value="5" >Middle Left Placement</option>
-                                            
-                                                <option value="6" >Middle Right Placement</option>
-                                            
-                                                <option value="7" >Bottom Center Placement</option>
-                                            
-                                                <option value="8" >Bottom Left Placement</option>
-                                            
-                                                <option value="9" >Bottom Right Placement</option>
-                                            </select>
+                                    <div class="col-sm-12">
+                                        <div class="input-group mb-4">
+                                            <div class="am-inputBox inputFocus">
+                                                <label for="Logoupload" class="form-label inputText selectText">Campaign Schedule</label>
+                                                <select class="form-select am-input am-input-select" id="scheduletime">
+                                                  <option value="1" selected>Schedule Now</option>
+                                                  <option value="2">Schedule Later</option>
+                                                </select>
+                                            </div>
+                                            <div class="am-inputBox" style="flex: 1;" id="logo_url">
+                                                <input type="date" class="form-control am-input" id="scheduleDate" disabled>
+                                                <label for="scheduleDate" class="form-label inputText">Select Schedule Date</label>
+                                            </div>
+                                            <div class="am-inputBox" style="flex: 1;" id="logo_url">
+                                                <input type="time" class="form-control am-input" id="scheduleTime" disabled>
+                                                <label for="scheduleTime" class="form-label inputText">Select Schedule Time</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="am-inputBox mb-4">
-                                            <label for="refresh_freq" class="form-label inputText selectText">Refresh Frequency</label>
-                                            <select class="form-select am-input am-input-select" id="refresh_freq">
-                                                <option value=""></option>
-                                            
-                                                <option value="1" >1</option>
-                                            
-                                                <option value="2" >2</option>
-                                            
-                                                <option value="3" >3</option>
-                                            
-                                                <option value="4" >4</option>
-                                            
-                                                <option value="5" >5</option>
-                                            
-                                                <option value="6" >6</option>
-                                            
-                                                <option value="7" >7</option>
-                                            
-                                                <option value="8" >8</option>
-                                            
-                                                <option value="9" >9</option>
-                                            
-                                                <option value="random" >Random</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="am-inputBox mb-4">
-                                            <label for="launch_time" class="form-label inputText">Launch Time Interval</label>
-                                            <input type="text" class="form-control am-input" id="launch_time" value="">
-                                        </div>  
                                     </div>
                                 </div>
                                  <div class="row mx-4">
@@ -406,6 +384,17 @@
                     else{
                         document.getElementById('logo_url').style.display = "none";
                         document.getElementById('logo_path').style.display = "block";
+                    }
+                });
+                document.getElementById('scheduletime').addEventListener('change', function() {
+                    console.log('You selected: ', this.value);
+                    if(this.value == 1){
+                        document.getElementById('scheduleDate').disabled = true;
+                        document.getElementById('scheduleTime').disabled = true;
+                    }
+                    else{
+                        document.getElementById('scheduleDate').disabled = false;
+                        document.getElementById('scheduleTime').disabled = false;
                     }
                 });
         </script>

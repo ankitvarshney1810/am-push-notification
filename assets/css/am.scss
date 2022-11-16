@@ -35,15 +35,16 @@ $font-color: #202020;
     box-sizing: border-box;
     .inputText, .selectText{
         position: absolute;
-        top: 10px;
+        top: 9px;
         left: 8px;
         line-height: 20px;
-        font-size: 18px;
+        font-size: 16px;
         color: #afafaf;
         transition: 0.5s;
         margin-bottom: 0;
         padding: 0 8px;
         background-color: #fff;
+        border-radius: 4px;
         z-index: 1;
     }
     .selectText{
@@ -62,6 +63,12 @@ $font-color: #202020;
         border: 1px solid #bbbbbb;
         &:focus{
             box-shadow: none;
+        }
+        &:disabled{
+            background-color: #e9ecef;
+            ~ .inputText{
+                background-color: #e9ecef;
+            }
         }
     }
     .am-input-select{
@@ -82,6 +89,11 @@ $font-color: #202020;
     }
     .am-input{
         border-bottom: 2px solid $primary-color;
+        &:disabled{
+            ~ .inputText{
+                background: linear-gradient(180deg, white 49%, #e9ecf0 70%);
+            }
+        }
     }
 }
 
@@ -111,7 +123,6 @@ $font-color: #202020;
         display: flex;
         margin-bottom: 1rem;
         img {
-            background-color: red;
             width: 80px;
             height: 80px;
             margin: auto;
@@ -151,6 +162,61 @@ $font-color: #202020;
                 color: #fff;
                 background-color: #6230b8;
                 border-color: #6230b8;
+            }
+        }
+    }
+}
+
+.notification-toast{
+    position: relative;
+    border-radius: 8px;
+    height: fit-content;
+    margin: auto;
+    width: 450px;
+    max-width: 520px;
+    background-color: #eee;
+    overflow: hidden;
+    box-shadow: 0 1px 8px 1px #00000030;
+    img.banner{
+        width: 100%;
+    }
+    .body{
+        padding: 16px;
+        .top{
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 100px;
+            }
+            .close{
+                font-size: 16px;
+                font-weight: 600;
+                color: #707070;
+            }
+        }
+        .middle{
+            display: flex;
+            .logo{
+                width: 80px;
+                height: 80px;
+                margin: auto;
+            }
+            .detail{
+                margin: auto 0 auto 12px;
+                .heading{
+                    font-size: 18px;
+                    color: #000 !important;
+                    font-weight: 500 !important;
+                }
+                p{
+                    font-size: 15px;
+                    color: #707070;
+                    margin-bottom: 0;
+                }
+                .website{
+                    margin-top: 4px;
+                    font-size: 14px;
+                }
             }
         }
     }
