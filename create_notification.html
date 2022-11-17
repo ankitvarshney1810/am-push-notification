@@ -154,34 +154,28 @@
         <section class="content" id="content">
         	<div class="campaign">
         		<div class="container">
-        			<div class="row g-0">
-        				<div class="col-12">
+        			<div class="row g-0 mt-4">
+        				<div class="col-6">
         					<div class="heading">Configure Notification</div>
         				</div>
+                        <div class="col-sm-6">                                      
+                            <div class="am-inputBox">
+                                <label for="selectedApp" class="form-label inputText selectText">Select App</label>
+                                <select class="form-select am-input am-input-select" id="selectedApp">
+                                    <option value=""></option>
+                                
+                                    <option value="1" >First Notification</option>
+                                
+                                    <option value="2" >Second Notification</option>
+                                </select>
+                            </div>
+                        </div>
         			</div>
         			<hr class="mb-4">
         			<input type="hidden" class="form-control" id="projectId" value="0">
         			<div class="row my-4" id="set-up">
         				<div class="col">
         					<form action="javascript:void(0)" class="mx-0 mx-md-2 mx-lg-4" id="projectSetUp">
-        						<div class="row mx-0 mx-md-4">
-        							<div class="col-sm-6">
-                                    	<div class="am-inputBox inputFocus mb-4">
-                                        	<input type="text" class="form-control am-input" id="title" value="First Notification" disabled>
-                                        	<label for="title" class="form-label inputText">Project Title</label>
-                                    	</div>  
-                                    </div>
-        							<div class="col-sm-6">
-                                        <div class="input-group mb-4">
-                                            <span class="input-group-text" id="basic-addon3">https://</span>
-        								    <div class="am-inputBox inputFocus d-flex" style="flex: 1;">
-                                                <input type="text" class="form-control am-input" id="website" value="www.latestjob.org.in" disabled>
-                                            	<label for="website" class="form-label inputText">Website domain</label>
-        								    </div>  
-                                        </div>
-        							</div>
-                                </div>
-                                <hr class="mb-4">
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <div class="secondary-heading">Notification Elements</div>
@@ -239,6 +233,35 @@
         							        	    </div>  
                                                 </div>
         							        </div>
+                                            <div class="col-sm-12 text-end">
+                                                <div class="button-box">
+                                                    <button type="button" class="btn btn-apply-outline"  id="projectSetUpSubmit"><span class="d-inline-block me-1">Send Now</span><i class="fas fa-angle-right"></i></button>
+                                                    <button type="button" class="btn btn-apply"  id="sendLater"><span class="d-inline-block me-1">Send Later</span><i class="fas fa-angle-right"></i></button>
+                                                    <div class="buttons-popup" id="schedulelaterpopup">
+                                                        <div class="head">
+                                                            <span>Schedule for later</span>
+                                                            <div class="close" id="close_schedulelaterpopup"><i class="fas fa-times"></i></div>
+                                                        </div>
+                                                        <div class="body">
+                                                            <div class="col-sm-12 mb-3">
+                                                                <div class="am-inputBox">
+                                                                    <input type="date" class="form-control am-input" id="scheduleDate">
+                                                                    <label for="scheduleDate" class="form-label inputText">Select Schedule Date</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 mb-3">
+                                                                <div class="am-inputBox">
+                                                                    <input type="time" class="form-control am-input" id="scheduleTime">
+                                                                    <label for="scheduleTime" class="form-label inputText">Select Schedule Time</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 text-end">
+                                                                <button type="button" class="btn btn-apply"><span class="d-inline-block me-1">Schedule</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 border-start">
@@ -261,55 +284,8 @@
                                                 <button class="btn btn-light btn-sm w-100">Read Now</button>
                                             </div>
                                         </div>
-                                        <!-- <div class="toast-card">
-                                            <div class="close">x</div>
-                                            <div class="detail">
-                                                <img src="https://www.latestjob.org.in/wp-content/uploads/2022/10/cropped-search-icon-180x180.png" alt="">
-                                                <div>
-                                                    <div class="heading ms-3">Header</div>
-                                                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam accusantium illo illum corrupti quis officiis nobis quidem perferendis quaerat perspiciatis fuga excepturi mollitia autem</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end">
-                                                <div class="buttons">
-                                                    <button class="btn btn-am-primary">Allow</button>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <hr class="mb-4">
-                                <div class="secondary-heading">Additional Details</div>
-                                <div class="row mx-4">
-                                    <div class="col-sm-12">
-                                        <div class="input-group mb-4">
-                                            <div class="am-inputBox inputFocus">
-                                                <label for="Logoupload" class="form-label inputText selectText">Campaign Schedule</label>
-                                                <select class="form-select am-input am-input-select" id="scheduletime">
-                                                  <option value="1" selected>Schedule Now</option>
-                                                  <option value="2">Schedule Later</option>
-                                                </select>
-                                            </div>
-                                            <div class="am-inputBox" style="flex: 1;" id="logo_url">
-                                                <input type="date" class="form-control am-input" id="scheduleDate" disabled>
-                                                <label for="scheduleDate" class="form-label inputText">Select Schedule Date</label>
-                                            </div>
-                                            <div class="am-inputBox" style="flex: 1;" id="logo_url">
-                                                <input type="time" class="form-control am-input" id="scheduleTime" disabled>
-                                                <label for="scheduleTime" class="form-label inputText">Select Schedule Time</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                 <div class="row mx-4">
-                                     <div class="col-12 text-end mt-sm-2">
-                                         <div class="row g-0 justify-content-md-end">    
-                                             <div class="col-12 col-sm-auto">
-                                             	<button type="button" class="btn btn-apply"  id="projectSetUpSubmit"><span class="d-inline-block me-1">Configure</span><i class="fas fa-angle-right"></i></button>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
                              </form>
                          </div>
                      </div>
@@ -397,6 +373,16 @@
                         document.getElementById('scheduleTime').disabled = false;
                     }
                 });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("#sendLater").click(function(){
+                    $("#schedulelaterpopup").show();
+                });
+                $("#close_schedulelaterpopup").click(function(){
+                    $("#schedulelaterpopup").hide();
+                });
+            });
         </script>
         <script src="assets/js/main.js"></script>
         <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

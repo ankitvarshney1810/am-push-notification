@@ -221,3 +221,36 @@ $font-color: #202020;
         }
     }
 }
+
+.button-box{
+    position: relative;
+    .buttons-popup{
+        position: absolute;
+        display: none;
+        bottom: 50px;
+        right: 0;
+        border-radius: 8px;
+        text-align: left;
+        overflow: hidden;
+        background-color: $light-color;
+        box-shadow: 0 0 8px 1px #00000040;
+        min-width: 320px;
+        z-index: 100;
+        .head{
+            background-color: $light-grey;
+            color: $font-color;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            .close{
+                font-size: 16px;
+                font-weight: 600;
+                color: #707070;
+                cursor: pointer;
+            }
+        }
+        .body{
+            padding: 16px 16px 28px;
+        }
+    }
+}
