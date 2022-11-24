@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#21395f">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=PT Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/am.css">
+        <script src="https://kit.fontawesome.com/4e1eba2436.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+        <link rel="icon" href="assets/images/icon.png" type="image">
+        <title>User Add New Project | Automagic IT Solutions Pvt Ltd</title>
+    </head>
+    <body style="font-family:verdana!important;">
+        <section class="sidebar" id="sidebar">
+        	<div class="head">
+                <div class="logo">
+                	<a href="/home">
+                    	<img src="/assets/images/Logo-semilight.png" alt="Automagic IT Solutions">
+                    </a>
+                </div>
+            </div>
+            <div class="body">
+                <a href="/user" >
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="name">DASHBOARD</span>
+                </a>
+                <h6>MAIN MENU</h6>
+                <div class="drop mt-2">
+        	        <a href="/user/project" >
+        	            <span class="icon"><i class="fas fa-mail-bulk"></i></span>
+        	            <span class="name">All App</span>
+        	        </a>
+        	        <span class="add-cat" id="campaign-nav"><i class="fas fa-chevron-circle-down"></i></span>
+        	        <div class="dropdown campaign-nav" style="display: none;">
+        				<a href="/user/project/add" class='active'>
+        					<span class="icon"><i class="fas fa-paper-plane"></i></span>
+        					<span class="name">Create App</span>
+        				</a>
+        	         </div>
+        	    </div>
+                <div class="drop">
+        	        <a href="/user/notification" >
+        	            <span class="icon"><i class="fas fa-address-book"></i></span>
+        	            <span class="name">Notifications</span>
+        	        </a>
+        	        <span class="add-cat" id="category"><i class="fas fa-chevron-circle-down"></i></span>
+                    <div class="dropdown category" style="display: none;">
+                        <a href="/user/notification/configure" >
+                            <span class="icon"><i class="fas fa-layer-group"></i></span>
+                            <span class="name">Configure New</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="drop">
+        			<a href="/user/settings" >
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="name">My Account</span>
+                    </a>
+                    <span class="add-cat" id="account"><i class="fas fa-chevron-circle-down"></i></span>
+                    <div class="dropdown account" style="display: none;">
+                        <a href="/user/subscription-plan" >
+                            <span class="icon"><i class="fas fa-credit-card"></i></span>
+                            <span class="name">Current Plan</span>
+                        </a>
+                        <a href="/user/purchase-history" >
+                            <span class="icon"><i class="fas fa-history"></i></span>
+                            <span class="name">Purchase History</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){ 
+            
+            	$('#campaign-nav').trigger('click');
+            
+            });
+            </script>
+        </section>
+    
+    
+    
+        <header>
+        	<div class="head">
+        		<div class="btnmenu">
+        			<div class="bars top"></div>
+        			<div class="bars center"></div>
+        			<div class="bars bottom"></div>
+        		</div>
+                <div class="notify">
+                    <span class="icon" id="bell">
+                        <i class="fas fa-bell"></i>
+                        <!-- span class="count">45</span -->
+                    </span>
+                </div>
+                <div class="sub-admin">
+                    <div class="pic">
+                        <img src="https://files.automagicitsolutions.com/profile/3a6ff581-65a4-441d-a8ac-05def68f908b.png" alt="Ramesh Jangra">
+                    </div>
+                    <div class="title">
+                        <strong>Ramesh</strong>
+                        <small>Admin</small>
+                    </div>
+                    <i class="fas fa-caret-down"></i>
+                    <div class="dropdown">
+                        <a href="/user/settings" class="item">Profile</a>
+                        <a href="/logout" class="item">Logout</a>
+                    
+                        <a href="/cms" class="item">CMS</a>
+                    
+                    </div>
+                </div>
+        	</div>
+        </header>
+        <div class="notification-box" id="box">
+            <div class="head">
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <div class="title">Latest</div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="action" id="close">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    
+        <div class="model notification-popup">
+            <div class="new text-center">
+                <div class="row">
+                    <div class="col mb-2">
+                        <h4 id="notification-title">Title</h4>
+                    </div>
+                </div>
+                <form action="javascript:void(0)">
+                    <div class="row">
+                        <div class="col-12" id="notification-message">
+                            Message
+                        </div>
+                    </div>
+                </form>
+                <div class="close">
+                    <img src="/resources/assets/images/close.svg">
+                </div>
+            </div>
+        </div>
+    
+        <section class="content" id="content">
+        	<div class="campaign">
+        		<div class="container">
+                    <div class="row g-0">
+                        <div class="col-12 col-md-3">
+                            <div class="heading">Notification List</div>
+                        </div>
+                        <div class="col-12 col-md-9 text-end mt-sm-2">
+                            <div class="row g-0 justify-content-md-end">
+                                <div class="col-4 col-sm-auto me-sm-1">
+                                    <select class="form-select" aria-label="Default select example" id="filterByProject" onchange="doFilter(this, 'projectId')">
+                                        <option value="0">All Projects</option>
+                                        <option value="1">Latest Job</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 col-sm-auto me-sm-1">
+                                    <select class="form-select" aria-label="Default select example" id="filterByStatus" onchange="doFilter(this, 'status', -1)">
+                                        <option value="-1">All Status</option>
+                                        <option value="0">Scheduled</option>
+                                        <option value="1">Completed</option>
+                                        <option value="5">Processing</option>
+                                        <option value="3">Failed</option>		
+                                    </select>
+                                </div>
+                                <div class="col-8 col-sm-auto">
+                                    <button class="btn btn-apply" id="add-project" onclick="window.location.href='/user/notification/configure'"><i class="fas fa-plus me-1 me-sm-2" aria-hidden="true"></i><span class="d-none d-sm-inline-block">Configure Notification</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        			<div class="listing">
+                        <div class="card">
+                            <div class="main-section">
+                                <div class="app-info">
+                                    <img src="assets/images/generic.png" alt="">
+                                    <div class="info">
+                                        <div class="name">MAHADISCOM New Jobs 2022</div>
+                                        <div class="url">Latest Job</div>
+                                    </div>
+                                </div>
+                                <div class="timestamp">
+                                    <div class="detail me-4">
+                                        <div class="head">Sent Count</div>
+                                        <div class="val">20 out of 25</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Status</div>
+                                        <div class="val text-success">Completed</div>
+                                    </div>
+                                </div>
+                                <div class="button-box">
+                                    <butoon class="btn btn-apply-primary rounded-pill px-3"><i class="fas fa-link me-2"></i>Visit</butoon>
+                                    <butoon class="btn btn-danger rounded-pill px-3"><i class="fas fa-lock me-2"></i>Deactivate</butoon>
+                                    <butoon class="btn btn-secondary rounded-pill px-3 show_detail" id="app_1">Show Detail<i class="fas fa-chevron-down ms-2"></i></butoon>
+                                </div>
+                            </div>
+                            <div class="hidden-section app_1">
+                                <div class="app-details">
+                                    <div class="detail me-4">
+                                        <div class="head">Schedule Time</div>
+                                        <div class="val">23 Nov 2022, 02:00 PM</div>
+                                    </div>
+                                    <div class="detail me-4">
+                                        <div class="head">Created On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Updated On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                </div>
+                                <div class="button-box align-self-center">
+                                    <button class="btn btn-outline-secondary rounded-pill px-3"><i class="fas fa-pen me-1"></i> Edit</button>
+                                    <button class="btn btn-apply-outline rounded-pill px-3 preview"><i class="fas fa-binoculars me-1"></i> Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="main-section">
+                                <div class="app-info">
+                                    <img src="assets/images/generic.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Latest Job</div>
+                                        <div class="url">Latest Job</div>
+                                    </div>
+                                </div>
+                                <div class="timestamp">
+                                    <div class="detail me-4">
+                                        <div class="head">Sent Count</div>
+                                        <div class="val">20 out of 25</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Status</div>
+                                        <div class="val text-warning">pending</div>
+                                    </div>
+                                </div>
+                                <div class="button-box">
+                                    <butoon class="btn btn-apply-primary rounded-pill px-3"><i class="fas fa-link me-2"></i>Visit</butoon>
+                                    <butoon class="btn btn-success rounded-pill px-3"><i class="fas fa-lock-open me-2"></i>Activate</butoon>
+                                    <butoon class="btn btn-secondary rounded-pill px-3 show_detail" id="app_2">Show Detail<i class="fas fa-chevron-down ms-2"></i></butoon>
+                                </div>
+                            </div>
+                            <div class="hidden-section app_2">
+                                <div class="app-details">
+                                    <div class="detail me-4">
+                                        <div class="head">Schedule Time</div>
+                                        <div class="val">23 Nov 2022, 02:00 PM</div>
+                                    </div>
+                                    <div class="detail me-4">
+                                        <div class="head">Created On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Updated On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                </div>
+                                <div class="button-box align-self-center">
+                                    <button class="btn btn-outline-secondary rounded-pill px-3"><i class="fas fa-pen me-1"></i> Edit</button>
+                                    <button class="btn btn-apply-outline rounded-pill px-3 preview"><i class="fas fa-binoculars me-1"></i> Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="main-section">
+                                <div class="app-info">
+                                    <img src="assets/images/generic.png" alt="">
+                                    <div class="info">
+                                        <div class="name">Latest Job</div>
+                                        <div class="url">Latest Job</div>
+                                    </div>
+                                </div>
+                                <div class="timestamp">
+                                    <div class="detail me-4">
+                                        <div class="head">Sent Count</div>
+                                        <div class="val">20 out of 25</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Status</div>
+                                        <div class="val text-danger">Failed</div>
+                                    </div>
+                                </div>
+                                <div class="button-box">
+                                    <butoon class="btn btn-apply-primary rounded-pill px-3"><i class="fas fa-link me-2"></i>Visit</butoon>
+                                    <butoon class="btn btn-success rounded-pill px-3"><i class="fas fa-lock-open me-2"></i>Activate</butoon>
+                                    <butoon class="btn btn-secondary rounded-pill px-3 show_detail" id="app_3">Show Detail<i class="fas fa-chevron-down ms-2"></i></butoon>
+                                </div>
+                            </div>
+                            <div class="hidden-section app_3">
+                                <div class="app-details">
+                                    <div class="detail me-4">
+                                        <div class="head">Schedule Time</div>
+                                        <div class="val">23 Nov 2022, 02:00 PM</div>
+                                    </div>
+                                    <div class="detail me-4">
+                                        <div class="head">Created On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="head">Updated On</div>
+                                        <div class="val">Oct 14, 2022</div>
+                                    </div>
+                                </div>
+                                <div class="button-box align-self-center">
+                                    <button class="btn btn-outline-secondary rounded-pill px-3"><i class="fas fa-pen me-1"></i> Edit</button>
+                                    <button class="btn btn-apply-outline rounded-pill px-3 preview"><i class="fas fa-binoculars me-1"></i> Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+        <div class="modal" id="preview-modal">
+            <div class="preview-modal top-left">
+                <div class="close-preview btn btn-light"><i class="fas fa-times me-2"></i> Close</div>
+                <div class="container d-flex h-100">
+                    <div class="notification-toast">
+                        <img src="assets/images/job.png" class="banner" alt="">
+                        <div class="body">
+                            <div class="top">
+                                <img src="assets/images/google.png" alt="">
+                                <div class="close"><i class="fas fa-times"></i></div>
+                            </div>
+                            <div class="middle my-3">
+                                <img src="https://www.latestjob.org.in/wp-content/uploads/2022/10/cropped-search-icon-180x180.png" alt="" class="logo">
+                                <div class="detail">
+                                    <div class="heading">Heading goes here</div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    <div class="website">www.latestjob.org.in</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-light btn-sm w-100">Read Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="html_model">
+            <div class="html_code_modal">
+                <div class="card">
+                    <div class="close close_html_code_modal">
+                        <i class="fas fa-times"></i> 
+                    </div>
+                    <div class="body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Step 1: Add am-sw.js in your website root location, so that it could be accessible with below url. <br>(No need to add this url anywhere!)</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" value="www.latestjob.org.in/am-sw.js" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Step 2: Add below script just before </html> tag</label>
+                            <div class="input-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" disabled><script src="https://push.automagicitsolutions.com/resources/am.js?amid=3a6ff581-65a4-441d-a8ac-05def68f908b&pid=BKhKj6g6uyc5A-HK1-LC51PNZ6Xz2b8nB5_c7YEF3R4fvxf3C5NRnL92px4QfrGJBjR0YUQ7qqc1bjeyPda1Z9c" defer></script></textarea>
+                                <span class="input-group-text d-flex align-items-start">
+                                    <button type="button" class="btn btn-sm btn-outline-primary">Copy</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+        <footer>
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <div class="col-md-7 text-center text-md-start align-self-center">
+                        <span class="copyright">&#169; 2022 Automagic IT Solutions. All Rights Reserved</span>
+                    </div>
+                    <div class="col-md-5 d-grid d-md-block align-self-center">
+                        <div class="footer-social-list">
+                            <ul class="list-inline top-margin-20">
+                                <li>
+                                    <a href="https://www.facebook.com/automaticitsolutions" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/automagicitsolutions/" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/it_automagic" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/automagic-it-solutions/" target="_blank">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UC_jMsSHTrFCPMGfD-NpcroA" target="_blank">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://in.pinterest.com/automagicitsolutions/" target="_blank">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $(document).ready(function(){
+                $(".show_detail").click(function(){
+                    id = $(this).attr("id");
+                    $("."+id).css("display","flex");
+                    $("#"+id).removeClass("show_detail");
+                    $("#"+id).addClass("hide_detail");
+                    $("#"+id).html("Hide Detail <i class='fas fa-chevron-up ms-2'></i>");
+                });
+                $(".hide_detail").click(function(){
+                    id = $(this).attr("id");
+                    $("."+id).css("display","none");
+                    $("#"+id).removeClass("hide_detail");
+                    $("#"+id).addClass("show_detail");
+                    $("#"+id).html("Show Detail <i class='fas fa-chevron-down ms-2'></i>");
+                });
+                $(".preview").click(function(){
+                    $("#preview-modal").show();
+                });
+                $(".close-preview").click(function(){
+                    $("#preview-modal").hide();
+                });
+                $(".html_code").click(function(){
+                    $("#html_model").show();
+                });
+                $(".close_html_code_modal").click(function(){
+                    $("#html_model").hide();
+                });
+            });
+        </script>
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+            $( function() {
+            	$("#datepicker").datepicker({
+            		dateFormat: "dd/mm/yy",
+            		duration: "fast"
+            	});
+            });
+        </script>
+    </body>
+</html>

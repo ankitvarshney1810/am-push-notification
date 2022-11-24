@@ -199,7 +199,6 @@ $font-color: #202020;
             .logo{
                 width: 80px;
                 height: 80px;
-                margin: auto;
             }
             .detail{
                 margin: auto 0 auto 12px;
@@ -251,6 +250,225 @@ $font-color: #202020;
         }
         .body{
             padding: 16px 16px 28px;
+        }
+    }
+}
+
+.listing{
+    margin-top: 16px;
+    .card{
+        padding: 16px;
+        box-shadow: 0 1px 6px #00000040;
+        margin-bottom: 1.2rem;
+        .main-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .app-info{
+                display: flex;
+                img{
+                    height: 50px;
+                    width: 50px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                    box-shadow: 0 1px 6px 1px #00000040;
+                }
+                .info{
+                    margin: auto 0 auto 16px;
+                    .name{
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: $font-color;    
+                        width: 200px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .url{
+                        font-size: 14px;
+                        color: #808080;
+                    }
+                }
+            }
+            .timestamp{
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                justify-content: space-between;
+                .detail{
+                    .head{
+                        font-size: 14px;
+                        color: #808080;
+                    }
+                    .val{
+                        font-size: 18px;
+                        color: $font-color;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .button-box{
+                margin: auto 0;
+            }
+        }
+        .hidden-section{
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 24px;
+            padding: 24px 0 16px;
+            border-top: 1px solid #ddd;
+            .app-details{
+                display: flex;
+                .detail{
+                    .head{
+                        font-size: 14px;
+                        color: #808080;
+                    }
+                    .val{
+                        font-size: 18px;
+                        color: $font-color;
+                        font-weight: 600;
+                    }
+                    .passcode{
+                        position: relative;
+                        .passcode-input{
+                            border: none;
+                            background-color: transparent;
+                        }
+                        .show{
+                            position: absolute;
+                            right: 0;
+                            padding: 5px 6px;
+                            background-color: #fff;
+                        }
+                    }
+                }
+
+            }
+            .button-box{
+                margin: auto 0;
+            }
+        }
+    }
+}
+
+.modal{
+    .preview-modal{
+        height: 100%;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #00000080;
+            backdrop-filter: blur(6px);
+            z-index: -1;
+        }
+        .close-preview{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .toast-container{
+            display: flex;
+            height: 100%;
+            padding: 60px 32px;
+            width: 100%;
+            .toast-card {
+                position: relative;
+                border-radius: 8px;
+                height: fit-content;
+                max-width: 520px;
+                padding: 16px;
+                background-color: #fff;
+                box-shadow: 0 1px 12px 2px #00000030;
+                .d-flex{
+                    div{
+                        font-size: 12px;
+                        align-self: center;
+                        a{
+                            text-decoration: none;
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .top-left .toast-card{
+        margin: 0 !important;
+    }
+    .top-center .toast-card{
+        margin: 0 auto !important;
+    }
+    .top-right .toast-container{
+        justify-content: flex-end!important;
+    }
+    
+    .center-left .toast-card{
+        align-self: center!important;
+    }
+    .center-center .toast-card{
+        margin: auto !important;
+    }
+    .center-right .toast-container{
+        justify-content: flex-end!important;
+    }
+    .center-right .toast-card{
+        align-self: center!important;
+    }
+    
+    .bottom-left .toast-card{
+        align-self: flex-end!important;
+    }
+    .bottom-center .toast-card{
+        margin: 0 auto !important;
+        align-self: flex-end!important;
+    }
+    .bottom-right .toast-container{
+        justify-content: flex-end!important;
+    }
+    .bottom-right .toast-card{
+        align-self: end!important;
+    }
+    
+    .html_code_modal{
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #00000080;
+            backdrop-filter: blur(6px);
+            z-index: -1;
+        }
+        .card{
+            position: relative;
+            margin: auto 16px;
+            min-width: 300px;
+            width: 720px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: none;
+            padding: 32px;
+            .close_html_code_modal{
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                padding: 5px;
+                cursor: pointer;
+            }
         }
     }
 }
