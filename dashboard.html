@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=PT Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/am.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/4e1eba2436.js" crossorigin="anonymous"></script>
@@ -21,27 +22,54 @@
             </div>
         </div>
         <div class="body">
-            <a href="dashboard.html">
+            <a href="dashboard.html" class="active">
                 <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
                 <span class="name">DASHBOARD</span>
             </a>
             <h6>MAIN MENU</h6>            
-            <a href="#">
-                <span class="icon"><i class="fas fa-book-open"></i></span>
-                <span class="name">Campaign</span>
-            </a>
-            <a href="contact.html">
-                <span class="icon"><i class="fas fa-users"></i></span>
-                <span class="name">Contacts</span>
-            </a>
-            <a href="#">
-                <span class="icon"><i class="fas fa-user"></i></span>
-                <span class="name">Sender</span>
-            </a>
-            <a href="#">
-                <span class="icon"><i class="fas fa-sliders-h"></i></span>
-                <span class="name">Settings</span>
-            </a>
+            <div class="drop mt-2">
+                <a href="/user/project" >
+                    <span class="icon"><i class="fas fa-mail-bulk"></i></span>
+                    <span class="name">All App</span>
+                </a>
+                <span class="add-cat" id="campaign-nav"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown campaign-nav" style="display: none;">
+                    <a href="/user/project/add" class='active'>
+                        <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                        <span class="name">Create App</span>
+                    </a>
+                 </div>
+            </div>
+            <div class="drop">
+                <a href="/user/notification" >
+                    <span class="icon"><i class="fas fa-address-book"></i></span>
+                    <span class="name">Notifications</span>
+                </a>
+                <span class="add-cat" id="category"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown category" style="display: none;">
+                    <a href="/user/notification/configure" >
+                        <span class="icon"><i class="fas fa-layer-group"></i></span>
+                        <span class="name">Configure New</span>
+                    </a>
+                </div>
+            </div>
+            <div class="drop">
+                <a href="/user/settings" >
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="name">My Account</span>
+                </a>
+                <span class="add-cat" id="account"><i class="fas fa-chevron-circle-down"></i></span>
+                <div class="dropdown account" style="display: none;">
+                    <a href="/user/subscription-plan" >
+                        <span class="icon"><i class="fas fa-credit-card"></i></span>
+                        <span class="name">Current Plan</span>
+                    </a>
+                    <a href="/user/purchase-history" >
+                        <span class="icon"><i class="fas fa-history"></i></span>
+                        <span class="name">Purchase History</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     <header>
@@ -155,63 +183,45 @@
         </div>
     </div>
     <section class="content" id="content">
-        <div class="dashboard">
+        <div class="dashboard push-dashboard">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="heading">Dashboard</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="reminder">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                                <div class="col-md-4 text-end align-self-center">
-                                    <button class="btn btn-apply">Subscribe Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row mt-2">
                     <div class="col-md-4 mt-3">
-                        <a href="#" class="card top-margin-20">
+                        <div class="card top-margin-20">
                             <div class="card-content">
                                 <div class="title">
-                                    <small>TOTAL</small>
-                                    <strong>Campaign</strong>
+                                    <strong>Latest Job</strong>
                                 </div>
-                                <div class="variable">12</div>
-                            </div>
-                            <div class="view">VIEW ALL</div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <a href="#" class="card top-margin-20">
-                            <div class="card-content">
-                                <div class="title">
-                                    <small>TOTAL</small>
-                                    <strong>Contacts</strong>
+                                <div class="counter">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="count-div">
+                                                <div class="count">22</div>
+                                                <div class="text">All</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="count-div success">
+                                                <div class="count">18</div>
+                                                <div class="text">Active</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="count-div danger">
+                                                <div class="count">4</div>
+                                                <div class="text">Deactive</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="variable">99</div>
                             </div>
-                            <div class="view">VIEW ALL</div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <a href="#" class="card top-margin-20">
-                            <div class="card-content">
-                                <div class="title">
-                                    <small>TOTAL</small>
-                                    <strong>Sender</strong>
-                                </div>
-                                <div class="variable">2</div>
-                            </div>
-                            <div class="view">VIEW ALL</div>
-                        </a>
+                            <div class="view">VIEW DETAIL</div>
+                        </div>
                     </div>
                 </div>
             </div>
