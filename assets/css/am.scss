@@ -311,6 +311,143 @@ $font-color: #202020;
             .button-box{
                 margin: auto 0;
             }
+            .notify-info{
+                width: 45%;
+                border-right: thin solid #70707040;
+                .detail{
+                    display: flex;
+                    margin-bottom: 12px;
+                    img{
+                        height: 50px;
+                        width: 50px;
+                        object-fit: cover;
+                        object-position: center;
+                        margin-right: 12px;
+                        border-radius: 50%;
+                        box-shadow: 0 1px 6px 1px #00000040;
+                    }
+                    .notify-detail{
+                        .top{
+                            display: flex;
+                            margin-bottom: 6px;
+                            .name{
+                                font-size: 20px;
+                                font-weight: 500;
+                                color: $font-color;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            .badge{
+                                display: inline-block;
+                                padding: 0.35em 0.65em;
+                                font-size: 12px;
+                                font-weight: 500;
+                                line-height: 1;
+                                color: #fff;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: text-bottom;
+                                margin-left: 16px;
+                                border-radius: 0.5rem;
+                                background-color: $secondary-color;
+                            }
+                            i{
+                                margin: auto 0 auto 16px;
+                                font-size: 18px;
+                            }
+                        }
+                        .bottom{
+                            p{
+                                font-size: 14px;
+                                margin-bottom: 0;
+                                color: #808080;
+                            }
+                        }
+                    }
+                }
+                .time-detail{
+                    display: flex;
+                    .time{
+                        display: flex;
+                        margin-right: 16px;
+                        .head{
+                            font-size: 14px;
+                            color: #808080;
+                            margin-right: 8px;
+                        }
+                        .val{
+                            font-size: 14px;
+                            color: $font-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .schedule-detail{
+                width: 40%;
+                padding: 0 8px;
+                border-right: thin solid #70707040;
+                .schedule-time{
+                    text-align: center;
+                    padding-bottom: 8px;
+                    margin-bottom: 8px;
+                    border-bottom: thin solid #70707040;
+                    .head{
+                        font-size: 14px;
+                        color: #808080;
+                        margin-right: 8px;
+                    }
+                    .val{
+                        font-size: 16px;
+                        color: $font-color;
+                        font-weight: 600;
+                    }
+                }
+                .status{
+                    display: flex;
+                    justify-content: space-around;
+                    p{
+                        margin: auto 0;
+                    }
+                    .detail{
+                        margin: auto 0;
+                        .head{
+                            font-size: 13px;
+                            color: #808080;
+                        }
+                        .val{
+                            font-size: 13px;
+                            color: $font-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .button-box-outline{
+                width: 15%;
+                text-align: right;
+            }
+            @media(max-width: 1350px){
+                .schedule-detail{
+                    width: 42%;
+                }
+                .button-box-outline{
+                    width: 18%;
+                }
+            }
+            @media(max-width: 1200px){
+                .notify-info, .schedule-detail{
+                    width: 100%;
+                    border-right: none;
+                    border-bottom: thin solid #70707040;
+                    padding-bottom: 16px;
+                    margin-bottom: 16px;
+                }
+                .button-box-outline{
+                    width: 100%;
+                }
+            }
         }
         .hidden-section{
             display: none;

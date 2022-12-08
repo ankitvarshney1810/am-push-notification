@@ -400,6 +400,177 @@
   margin: auto 0;
 }
 
+.listing .card .main-section .notify-info {
+  width: 45%;
+  border-right: thin solid #70707040;
+}
+
+.listing .card .main-section .notify-info .detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.listing .card .main-section .notify-info .detail img {
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-right: 12px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1px 6px 1px #00000040;
+          box-shadow: 0 1px 6px 1px #00000040;
+}
+
+.listing .card .main-section .notify-info .detail .notify-detail .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.listing .card .main-section .notify-info .detail .notify-detail .top .name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #202020;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listing .card .main-section .notify-info .detail .notify-detail .top .badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: text-bottom;
+  margin-left: 16px;
+  border-radius: 0.5rem;
+  background-color: #713fc9;
+}
+
+.listing .card .main-section .notify-info .detail .notify-detail .top i {
+  margin: auto 0 auto 16px;
+  font-size: 18px;
+}
+
+.listing .card .main-section .notify-info .detail .notify-detail .bottom p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #808080;
+}
+
+.listing .card .main-section .notify-info .time-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.listing .card .main-section .notify-info .time-detail .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 16px;
+}
+
+.listing .card .main-section .notify-info .time-detail .time .head {
+  font-size: 14px;
+  color: #808080;
+  margin-right: 8px;
+}
+
+.listing .card .main-section .notify-info .time-detail .time .val {
+  font-size: 14px;
+  color: #202020;
+  font-weight: 600;
+}
+
+.listing .card .main-section .schedule-detail {
+  width: 40%;
+  padding: 0 8px;
+  border-right: thin solid #70707040;
+}
+
+.listing .card .main-section .schedule-detail .schedule-time {
+  text-align: center;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: thin solid #70707040;
+}
+
+.listing .card .main-section .schedule-detail .schedule-time .head {
+  font-size: 14px;
+  color: #808080;
+  margin-right: 8px;
+}
+
+.listing .card .main-section .schedule-detail .schedule-time .val {
+  font-size: 16px;
+  color: #202020;
+  font-weight: 600;
+}
+
+.listing .card .main-section .schedule-detail .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.listing .card .main-section .schedule-detail .status p {
+  margin: auto 0;
+}
+
+.listing .card .main-section .schedule-detail .status .detail {
+  margin: auto 0;
+}
+
+.listing .card .main-section .schedule-detail .status .detail .head {
+  font-size: 13px;
+  color: #808080;
+}
+
+.listing .card .main-section .schedule-detail .status .detail .val {
+  font-size: 13px;
+  color: #202020;
+  font-weight: 600;
+}
+
+.listing .card .main-section .button-box-outline {
+  width: 15%;
+  text-align: right;
+}
+
+@media (max-width: 1350px) {
+  .listing .card .main-section .schedule-detail {
+    width: 42%;
+  }
+  .listing .card .main-section .button-box-outline {
+    width: 18%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .listing .card .main-section .notify-info, .listing .card .main-section .schedule-detail {
+    width: 100%;
+    border-right: none;
+    border-bottom: thin solid #70707040;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .listing .card .main-section .button-box-outline {
+    width: 100%;
+  }
+}
+
 .listing .card .hidden-section {
   display: none;
   -webkit-box-orient: horizontal;
