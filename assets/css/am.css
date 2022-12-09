@@ -484,6 +484,7 @@
   font-size: 14px;
   color: #808080;
   margin-right: 8px;
+  padding: 0;
 }
 
 .listing .card .main-section .notify-info .time-detail .time .val {
@@ -509,6 +510,7 @@
   font-size: 14px;
   color: #808080;
   margin-right: 8px;
+  padding: 0;
 }
 
 .listing .card .main-section .schedule-detail .schedule-time .val {
@@ -536,6 +538,7 @@
 .listing .card .main-section .schedule-detail .status .detail .head {
   font-size: 13px;
   color: #808080;
+  padding: 0;
 }
 
 .listing .card .main-section .schedule-detail .status .detail .val {
