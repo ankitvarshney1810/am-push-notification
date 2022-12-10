@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/4e1eba2436.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="assets/images/icon.png" type="image">
 </head>
 <body>
@@ -186,41 +187,217 @@
         <div class="dashboard push-dashboard">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-6 col-sm-4">
                         <div class="heading">Dashboard</div>
                     </div>
+                    <div class="col-6 col-sm-8 text-end align-self-center">
+                        <ul class="app-nav">
+                            <li>
+                                <a href="" class="active">All</a>
+                            </li>
+                            <li>
+                                <a href="">App_1</a>
+                            </li>
+                            <li>
+                                <a href="">App_2</a>
+                            </li>
+                            <li>
+                                <select name="" id="">
+                                    <option value="">Last Week</option>
+                                    <option value="">Last Week</option>
+                                    <option value="">Last Week</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-4 mt-3">
-                        <div class="card top-margin-20">
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card">
                             <div class="card-content">
                                 <div class="title">
-                                    <strong>Latest Job</strong>
+                                    <strong>Registrations</strong>
                                 </div>
-                                <div class="counter">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <div class="count-div">
-                                                <div class="count">22</div>
-                                                <div class="text">All</div>
-                                            </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-7">
+                                        <div style="width: 90%;">
+                                            <canvas id="myChart"></canvas>
                                         </div>
-                                        <div class="col-4">
-                                            <div class="count-div success">
-                                                <div class="count">18</div>
-                                                <div class="text">Active</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="count-div danger">
-                                                <div class="count">4</div>
-                                                <div class="text">Deactive</div>
+                                    </div>
+                                    <div class="col-12 col-md-5 align-self-center mt-4 mt-md-0">
+                                        <div class="card top-margin-20">
+                                            <div class="card-content">
+                                                <div class="counter">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="count-div">
+                                                                <div class="count">2234</div>
+                                                                <div class="text">All</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="count-div success">
+                                                                <div class="count">1834</div>
+                                                                <div class="text">Active</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="count-div danger">
+                                                                <div class="count">423</div>
+                                                                <div class="text">Deactive</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="view">VIEW DETAIL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="title">
+                                    <strong>Device wise Registration</strong>
+                                </div>
+                                <div class="row flex-row-reverse py-2">
+                                    <div class="col-12 col-md-5 col-lg-4 text-center">
+                                        <div class="pie">
+                                            <canvas id="myChart_2"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-7 col-lg-8 align-self-center border-end mt-4 mt-md-0">
+                                        <div class="card top-margin-20">
+                                            <table class="table table-striped push-table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">Device</th>
+                                                    <th scope="col" class="text-center">Active</th>
+                                                    <th scope="col" class="text-center">Deactive</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row" class="row_1">Mobile</th>
+                                                    <td class="text-center">23</td>
+                                                    <td class="text-center">43</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_2">Tablet</th>
+                                                    <td class="text-center">54</td>
+                                                    <td class="text-center">6</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_3">Desktop</th>
+                                                    <td class="text-center">59</td>
+                                                    <td class="text-center">34</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="title">
+                                    <strong>Browser wise Registration</strong>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-5 col-lg-4 text-center">
+                                        <div class="pie">
+                                            <canvas id="myChart_3"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-7 col-lg-8 align-self-center border-end mt-4 mt-md-0">
+                                        <div class="card top-margin-20">
+                                            <table class="table table-striped push-table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">Browser</th>
+                                                    <th scope="col" class="text-center">Active</th>
+                                                    <th scope="col" class="text-center">Deactive</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row" class="row_1">Chromium</th>
+                                                    <td class="text-center">23</td>
+                                                    <td class="text-center">43</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_2">Google Chrome</th>
+                                                    <td class="text-center">54</td>
+                                                    <td class="text-center">6</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_3">Others</th>
+                                                    <td class="text-center">59</td>
+                                                    <td class="text-center">34</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="title">
+                                    <strong>Country wise Registration</strong>
+                                </div>
+                                <div class="row flex-row-reverse py-2">
+                                    <div class="col-12 col-md-5 col-lg-4 text-center">
+                                        <div class="pie">
+                                            <canvas id="myChart_4"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-7 col-lg-8 align-self-center border-end mt-4 mt-md-0">
+                                        <div class="card top-margin-20">
+                                            <table class="table table-striped push-table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">Country</th>
+                                                    <th scope="col" class="text-center">Active</th>
+                                                    <th scope="col" class="text-center">Deactive</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row" class="row_1">India</th>
+                                                    <td class="text-center">23</td>
+                                                    <td class="text-center">43</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_2">USA</th>
+                                                    <td class="text-center">54</td>
+                                                    <td class="text-center">6</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row" class="row_3">China</th>
+                                                    <td class="text-center">59</td>
+                                                    <td class="text-center">34</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -273,7 +450,72 @@
             </div>
         </div>
     </footer>
+    <script>
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3, 10],
+              borderWidth: 0,
+              borderRadius: 25, 
+              barThickness: 30,
+              backgroundColor: '#713fc9'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
 
+        const ctx_2 = document.getElementById('myChart_2');
+        new Chart(ctx_2, {
+          type: 'pie',
+          data: {
+            labels: ['Mobile', 'Tab', 'PC'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3],
+              borderWidth: 0,
+              backgroundColor: ['#4959D8', '#FF859D', '#00ECD4']
+            }]
+          }
+        });
+
+        const ctx_3 = document.getElementById('myChart_3');
+        new Chart(ctx_3, {
+          type: 'pie',
+          data: {
+            labels: ['Chromium', 'G Chrome', 'Others'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3],
+              borderWidth: 0,
+              backgroundColor: ['#4959D8', '#FF859D', '#00ECD4']
+            }]
+          }
+        });
+
+        const ctx_4 = document.getElementById('myChart_4');
+        new Chart(ctx_4, {
+          type: 'pie',
+          data: {
+            labels: ['India', 'USA', 'China'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3],
+              borderWidth: 0,
+              backgroundColor: ['#4959D8', '#FF859D', '#00ECD4']
+            }]
+          }
+        });
+      </script>
     <script src="assets/js/main.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
